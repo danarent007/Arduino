@@ -19,11 +19,6 @@ int i = 0;
 int a = 0;
 
 
-
-
-
-
-
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -257,13 +252,6 @@ switch (currentKey) {
 
 
 //Start Keypad-------------------------
-
-
-
-
-
-
-
 int colPin[] = {5, 4, 3, 2};
 int rowPin[] = {9, 8, 7, 6};
 int rows = 4;
@@ -274,16 +262,6 @@ char keys[4][4] = {
   {'3','6','9','#'},
   {'A','B','C','D'}
 };
-
-
-
-
-
-
-
-
-
-
 
 
 void initKeypad()
