@@ -30,15 +30,30 @@ void loop() {
 
 }
 
+int getMaxSteps(int r, int g, int b){
+  if(r>g && r>b){
+    return r;
+  }
+  else if(g>b){
+    return g;
+  }
+  else{
+    return b;
+  }
+}
+
+//TODO make fad steps = to max Steps
 //Fade in
 void fadeIn(){
   //Set values to fraction
-  for (int i = 1; i < fadeSteps+1; i++){
+  for (int i = 1; i < getMaxSteps(fullRed,fullGreen,fullBlue)+1; i++){
     for (int pixel = 0; pixel < stripSize; pixel++){
-      strip.setPixelColor(pixel,fullRed*(i/fadeSteps),fullGreen*(i/fadeSteps),fullBlue*(i/fadeSteps)); 
+      strip.setPixelColor(pixel,fullRed*(i/getMaxSteps(fullRed,fullGreen,fullBlue)),fullGreen*(i/getMaxSteps(fullRed,fullGreen,fullBlue)),fullBlue*(i/getMaxSteps(fullRed,fullGreen,fullBlue))); 
     }
     strip.show();
-    delay(fadeSeconds*1000);
+
+    //Delay (based on total time)
+    delay((fadeSeconds/)*1000);
   }
 
 
